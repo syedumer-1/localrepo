@@ -1,4 +1,72 @@
-p{
-    color: blue;
-    background-color: aliceblue;
+/* add background-color */
+body{
+    background-color: cadetblue;
+}
+/* make square and rotate it */
+.heart{
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite alternate ;
+}
+
+/* making circle shape */
+.heart::after,
+.heart::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: beats 1s infinite alternate;
+}
+
+/* Top  */
+.heart::after{
+    top:-50px;
+    left: 0px;
+}
+
+/* Top */
+.heart::before{
+    top:0px;
+    left:50px;
+}
+
+/* center the shape */
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+/* Text style */
+.name{
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: -90vh;
+    font-size: 70px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    animation: beates 1s infinite alternate;
+}
+
+/* animate heart */
+@keyframes beat {
+    0% {scale: 1;}
+    100% {scale: 1.5; background-color: red;}
+}
+@keyframes beats {
+    0% {scale: 1;}
+    100% {background-color: red;}
+}
+
+/* animate text */
+@keyframes beates {
+    0% {color: black;}
+    100% {scale: 1.3;}
+    
 }
